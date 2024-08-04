@@ -1,2 +1,1 @@
-# React-Practice
-A repository for practicing React projects
+Просто практика REACT
