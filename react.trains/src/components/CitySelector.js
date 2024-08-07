@@ -1,4 +1,5 @@
 import React from "react";
+import Select from "react-select";
 
 const cities = [
   "Berlin",
@@ -106,26 +107,21 @@ const cities = [
 ];
 
 const uniqueCities = cities.map((city, index) => ({
-  id: `${city}-${index}`,
-  name: city,
+  value: city,
+  label: city,
 }));
 
-function CitySelector({ selectedCity, onSelectCity }) {
+function CitySelector({ selectedCity, onSelectCity, label }) {
   return (
     <div className="city-selector">
-      <label htmlFor="city">Город Отправления:</label>
-      <select
+      <label htmlFor="city">{label}</label>
+      <Select
         id="city"
-        value={selectedCity}
-        onChange={(e) => onSelectCity(e.target.value)}
-      >
-        <option value="">Выберите город</option>
-        {uniqueCities.map((city) => (
-          <option key={city.id} value={city.name}>
-            {city.name}
-          </option>
-        ))}
-      </select>
+        value={uniqueCities.find((city) => city.value === selectedCity)}
+        onChange={(option) => onSelectCity(option ? option.value : "")}
+        options={uniqueCities}
+        isSearchable
+      />
     </div>
   );
 }
