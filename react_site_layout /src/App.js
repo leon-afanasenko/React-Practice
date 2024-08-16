@@ -4,9 +4,12 @@ import HelpSection from "./components/HelpSection";
 import Categories from "./components/Categories";
 import JobList from "./components/JobList";
 import Footer from "./components/Footer";
+import FormComponent from "./components/FormComponent";
 import "./App.css";
+
 const App = () => {
   const [theme, setTheme] = useState("light");
+  const [showRegistrationForm, setShowRegistrationForm] = useState(false);
 
   const toggleTheme = () => {
     const newTheme = theme === "light" ? "dark" : "light";
@@ -23,13 +26,24 @@ const App = () => {
     document.body.className = theme === "dark" ? "dark-theme" : "";
   }, [theme]);
 
+  const closeRegistrationForm = () => {
+    setShowRegistrationForm(false);
+  };
+
   return (
     <div className={`App ${theme}`}>
-      <Header toggleTheme={toggleTheme} currentTheme={theme} />
+      <Header
+        toggleTheme={toggleTheme}
+        currentTheme={theme}
+        setShowRegistrationForm={setShowRegistrationForm}
+      />
       <HelpSection />
       <Categories />
       <JobList />
       <Footer />
+      {showRegistrationForm && (
+        <FormComponent closeForm={closeRegistrationForm} />
+      )}
     </div>
   );
 };

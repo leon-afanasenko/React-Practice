@@ -2,13 +2,15 @@ import React from "react";
 import "./Header.css";
 import ThemeSwitcher from "./ThemeSwitcher";
 
-const Header = ({ toggleTheme, currentTheme }) => {
+const Header = ({ toggleTheme, currentTheme, setShowRegistrationForm }) => {
   return (
     <header className="header">
       <div className="header-top">
         <div className="logo">Cooljob</div>
         <div className="auth-links">
-          <a href="/register">Регистрация</a>
+          <a href="#" onClick={() => setShowRegistrationForm(true)}>
+            Регистрация
+          </a>
           <a href="/login">Вход</a>
         </div>
         <ThemeSwitcher toggleTheme={toggleTheme} currentTheme={currentTheme} />
