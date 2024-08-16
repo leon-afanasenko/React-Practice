@@ -70,7 +70,7 @@ const FormComponent = () => {
         `${errorMessage.offsetHeight}px`
       );
     });
-  }, [errorMessages]); // Run the effect whenever errorMessages changes
+  }, [errorMessages]);
 
   return (
     <div className="form-container">
