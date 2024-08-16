@@ -5,11 +5,14 @@ import Categories from "./components/Categories";
 import JobList from "./components/JobList";
 import Footer from "./components/Footer";
 import FormComponent from "./components/FormComponent";
+import LoginComponent from "./components/LoginComponent";
 import "./App.css";
 
 const App = () => {
   const [theme, setTheme] = useState("light");
   const [showRegistrationForm, setShowRegistrationForm] = useState(false);
+  const [showLoginForm, setShowLoginForm] = useState(false);
+  const [registeredEmail, setRegisteredEmail] = useState(""); // New state for storing registered email
 
   const toggleTheme = () => {
     const newTheme = theme === "light" ? "dark" : "light";
@@ -30,6 +33,10 @@ const App = () => {
     setShowRegistrationForm(false);
   };
 
+  const closeLoginForm = () => {
+    setShowLoginForm(false);
+  };
+
   return (
     <div className={`App ${theme}`}>
       <Header
@@ -42,7 +49,17 @@ const App = () => {
       <JobList />
       <Footer />
       {showRegistrationForm && (
-        <FormComponent closeForm={closeRegistrationForm} />
+        <FormComponent
+          closeForm={closeRegistrationForm}
+          setShowLoginForm={setShowLoginForm}
+          setRegisteredEmail={setRegisteredEmail}
+        />
+      )}
+      {showLoginForm && (
+        <LoginComponent
+          closeForm={closeLoginForm}
+          initialEmail={registeredEmail}
+        />
       )}
     </div>
   );

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "./FormComponent.css";
 
-const FormComponent = ({ closeForm }) => {
+const FormComponent = ({ closeForm, setShowLoginForm, setRegisteredEmail }) => {
   const [name, setName] = useState("");
   const [phoneNumber, setPhoneNumber] = useState("");
   const [email, setEmail] = useState("");
@@ -32,6 +32,13 @@ const FormComponent = ({ closeForm }) => {
 
     setErrorMessages({});
     setIsRegistered(true);
+
+    // Store the registered email and open the login form
+    setRegisteredEmail(email); // Store the email in the App.js state
+    setTimeout(() => {
+      setShowLoginForm(true);
+      closeForm();
+    }, 2000); // Delay for better user experience
   };
 
   useEffect(() => {
