@@ -238,6 +238,30 @@ footer a:hover {
   margin-top: 10px;
 }
 
+.auth-links a {
+  color: var(--auth-link-color-light);
+  text-decoration: none;
+  padding: 10px;
+  transition: color 0.3s ease, background-color 0.3s ease, transform 0.3s ease;
+  border-radius: var(--border-radius);
+}
+
+.auth-links a:hover {
+  color: var(--auth-link-hover-color-light);
+  background-color: var(--button-hover-background);
+  transform: scale(1.05);
+}
+.logo {
+  color: red;
+}
+
+/* Состояние при нажатии */
+.auth-links a:active {
+  color: var(--auth-link-hover-color-light);
+  background-color: var(--button-hover-background);
+  transform: scale(0.95);
+}
+
 .header-search button:hover {
   background-color: var(--button-hover-background);
   border-color: var(--button-hover-border);
@@ -484,6 +508,30 @@ table td {
   animation: fadeIn 0.5s ease-in-out;
 }
 
+/* Базовые стили для всех экранов */
+.container {
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 10px;
+  transition: all 0.3s ease;
+}
+
+header,
+.sidebar,
+.main-content {
+  transition: padding 0.3s ease;
+}
+
+.card {
+  box-sizing: border-box;
+  transition: padding 0.3s ease, width 0.3s ease;
+}
+
+table {
+  transition: font-size 0.3s ease;
+}
+
+/* Адаптивность для больших экранов */
 @media (min-width: 1500px) {
   .container {
     max-width: 1200px;
@@ -502,6 +550,7 @@ table td {
   }
 }
 
+/* Адаптивность для экранов от 1200px до 1499px */
 @media (min-width: 1200px) and (max-width: 1499px) {
   .container {
     max-width: 1000px;
@@ -520,6 +569,7 @@ table td {
   }
 }
 
+/* Адаптивность для экранов от 1000px до 1199px */
 @media (min-width: 1000px) and (max-width: 1199px) {
   .container {
     max-width: 800px;
@@ -538,6 +588,7 @@ table td {
   }
 }
 
+/* Адаптивность для экранов от 800px до 999px */
 @media (min-width: 800px) and (max-width: 999px) {
   .container {
     max-width: 600px;
@@ -556,6 +607,7 @@ table td {
   }
 }
 
+/* Адаптивность для экранов от 600px до 799px */
 @media (min-width: 600px) and (max-width: 799px) {
   .container {
     max-width: 100%;
@@ -574,6 +626,7 @@ table td {
   }
 }
 
+/* Адаптивность для экранов от 450px до 599px */
 @media (min-width: 450px) and (max-width: 599px) {
   .container {
     padding: 10px;
@@ -591,6 +644,8 @@ table td {
     font-size: 11px;
   }
 }
+
+/* Адаптивность для экранов меньше 450px */
 @media (max-width: 449px) {
   .container {
     padding: 5px;
@@ -608,10 +663,34 @@ table td {
     font-size: 10px;
   }
 
+  /* Скрываем мобильное меню */
   .mobile-menu {
     display: block;
   }
   header .auth-links {
-    display: none;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
   }
+}
+
+/* Плавные переходы и улучшение адаптивности */
+header,
+.sidebar,
+.main-content,
+.card,
+table {
+  transition: all 0.3s ease;
+}
+
+header .auth-links a {
+  transition: color 0.3s ease, font-size 0.3s ease;
+}
+
+.card {
+  transition: transform 0.3s ease;
+}
+
+.card:hover {
+  transform: scale(1.02);
 }
