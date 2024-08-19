@@ -3,8 +3,6 @@ import "./GameModal.css";
 
 const GameModal = ({ game, onClose }) => {
   if (!game) return null;
-
-  // Вынесем данные из объекта `game` с дефолтными значениями
   const {
     title = "No Title",
     genre = "No Genre",
@@ -13,7 +11,7 @@ const GameModal = ({ game, onClose }) => {
     price = "No Price",
     available = false,
     status = "No Status",
-    imageUrl = "",
+    imageUrl = "The game is located in Germany",
   } = game;
 
   return (
