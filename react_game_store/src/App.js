@@ -57,7 +57,7 @@ function App() {
         "https://cdn.akamai.steamstatic.com/steam/apps/945360/header.jpg",
     },
     {
-      title: "Fall Guys: Ultimate Knockout",
+      title: "Fall Guys",
       genre: "Экшен, Платформер",
       rating: "Очень положительные (85%)",
       releaseDate: "2020-08-04",
@@ -67,7 +67,7 @@ function App() {
         "https://cdn.akamai.steamstatic.com/steam/apps/1097150/header.jpg",
     },
     {
-      title: "Sekiro: Shadows Die Twice",
+      title: "Sekiro: Shadows",
       genre: "Экшен, Ролевая игра",
       rating: "Крайне положительные (95%)",
       releaseDate: "2019-03-22",
