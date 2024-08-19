@@ -1,12 +1,10 @@
-/* Основные стили */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
-
 body {
-  font-family: Arial, sans-serif;
+  font-family: Tahoma, Verdana, sans-serif;
   transition: background-color 0.3s, color 0.3s;
   background-color: #f5f5f5;
   color: #333;
@@ -651,7 +649,6 @@ footer p {
   }
 }
 
-/* Экраны до 450px */
 @media (max-width: 450px) {
   header {
     flex-direction: column;

@@ -2,46 +2,38 @@ import React from "react";
 import "./GameModal.css";
 
 const GameModal = ({ game, onClose }) => {
-  if (!game) return null;
-  const {
-    title = "No Title",
-    genre = "No Genre",
-    rating = "No Rating",
-    releaseDate = "No Release Date",
-    price = "No Price",
-    available = false,
-    status = "No Status",
-    imageUrl = "The game is located in Germany",
-  } = game;
+  const handleBuyClick = () => {
+    console.log("Purchasing game:", game.title);
+    onClose();
+  };
 
   return (
-    <div className="modal">
-      <div className="modal-content">
-        <button className="close-button" onClick={onClose}>
-          Close
+    <div className="modal-background">
+      <div className="modal-box">
+        <button className="modal-close" onClick={onClose}>
+          ×
         </button>
-        {imageUrl && <img src={imageUrl} alt={title} className="game-image" />}
-        <h2>{title}</h2>
-        <div className="game-details">
+        <img src={game.imageUrl} alt={game.title} className="modal-image" />
+        <div className="modal-details">
           <p>
-            <strong>Genre:</strong> {genre}
+            <strong>Title:</strong> {game.title}
           </p>
           <p>
-            <strong>Rating:</strong> {rating}
+            <strong>Genre:</strong> {game.genre}
           </p>
           <p>
-            <strong>Release Date:</strong> {releaseDate}
+            <strong>Rating:</strong> {game.rating}
           </p>
           <p>
-            <strong>Price:</strong> {price} ₽
+            <strong>Release Date:</strong> {game.releaseDate}
           </p>
           <p>
-            <strong>Available:</strong> {available ? "Yes" : "No"}
-          </p>
-          <p>
-            <strong>Status:</strong> {status}
+            <strong>Price:</strong> {game.price} ₽
           </p>
         </div>
+        <button className="modal-buy-button" onClick={handleBuyClick}>
+          Купить
+        </button>
       </div>
     </div>
   );

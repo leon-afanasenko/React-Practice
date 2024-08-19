@@ -728,7 +728,6 @@ function App() {
     },
   ];
 
-  // Фильтрация игр
   const filteredGames = games.filter((game) => {
     if (activeFilter === "Весь каталог") {
       return true;
