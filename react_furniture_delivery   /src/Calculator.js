@@ -354,7 +354,7 @@ const Calculator = () => {
       <button onClick={handleCalculateClick}>Рассчитать стоимость</button>
 
       <div className="total-cost">
-        <h2>Итоговая стоимость: {totalCost.toFixed(2)} Руб.</h2>
+        <h2>Итоговая стоимость: {totalCost.toFixed(2)} ₪ .</h2>
       </div>
 
       <button onClick={handleModalToggle}>Подробности</button>

@@ -1,7 +1,32 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./Home.css";
+import Robot from "./png-clipart-robot-3d-three-dimensional-removebg-preview.png";
 
 const Home = () => {
+  const handleClick = () => {
+    window.location.href = "https://wa.me/yourphonenumber";
+  };
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollTop = window.pageYOffset;
+      const heroSectionHeight =
+        document.querySelector(".hero-section")?.offsetHeight || 0;
+      const colorChangePoint = heroSectionHeight / 2;
+
+      if (scrollTop > colorChangePoint) {
+        document.body.style.backgroundColor = "#333";
+      } else {
+        document.body.style.backgroundColor = "transparent";
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
   return (
     <main>
       <section className="hero-section">
@@ -16,6 +41,13 @@ const Home = () => {
           <p>
             Providing Reliable Moving Solutions to Make Your Transition Smooth
           </p>
+        </div>
+      </section>
+
+      <section className="clickable-image-section">
+        <div className="clickable-image-wrapper" onClick={handleClick}>
+          <img src={Robot} alt="Delivery Robot" className="clickable-image" />
+          <div className="clickable-image-text">Click Me</div>
         </div>
       </section>
 
