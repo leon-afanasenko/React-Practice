@@ -1,5 +1,4 @@
 function calculate() {
-  // Получаем значения из формы
   const item = document.getElementById("item").value;
   const quantity = parseInt(document.getElementById("quantity").value, 10);
   const floorFrom = parseInt(document.getElementById("floorFrom").value, 10);
@@ -7,14 +6,12 @@ function calculate() {
   const disassembly = document.getElementById("disassembly").checked;
   const assembly = document.getElementById("assembly").checked;
 
-  // Проверяем корректность данных
   if (isNaN(quantity) || isNaN(floorFrom) || isNaN(floorTo)) {
     alert("Пожалуйста, введите корректные значения.");
     return;
   }
 
-  // Вычисление стоимости
-  let baseCost = 100; // Базовая стоимость
+  let baseCost = 100;
   if (item === "wardrobe") {
     baseCost = 200;
   } else if (item === "bed") {
@@ -23,22 +20,17 @@ function calculate() {
     baseCost = 50;
   }
 
-  // Стоимость за этаж
   const floorCost = 10;
 
-  // Общая стоимость
   const totalCost =
     baseCost * quantity + Math.abs(floorTo - floorFrom) * floorCost;
 
-  // Добавляем дополнительные услуги
   let additionalCost = 0;
   if (disassembly) additionalCost += 50;
   if (assembly) additionalCost += 50;
 
-  // Итоговая стоимость
   const finalCost = totalCost + additionalCost;
 
-  // Отображение результата
   document.getElementById("result").innerHTML = `
       <h3>Итоговая стоимость:</h3>
       <p>Предмет: ${item}</p>

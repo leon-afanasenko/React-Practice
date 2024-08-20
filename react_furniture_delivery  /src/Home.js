@@ -4,7 +4,6 @@ import "./Home.css";
 const Home = () => {
   return (
     <main>
-      {/* Hero Section */}
       <section className="hero-section">
         <img
           id="heroImage"
@@ -20,7 +19,6 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Cards Container */}
       <section className="cards-container">
         <div className="card">
           <img
@@ -79,7 +77,6 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Info Section */}
       <section className="info-section">
         <h4>
           Мы занимаемся как городскими, так и междугородними переездами в
@@ -99,7 +96,6 @@ const Home = () => {
         </p>
       </section>
 
-      {/* Services Section */}
       <section className="services">
         <h4>Мы предлагаем следующие услуги:</h4>
         <div className="services-list">
@@ -150,7 +146,6 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Why Choose Us Section */}
       <section className="why-choose-us">
         <h4>Почему стоит выбрать нас?</h4>
         <div className="reason">
@@ -197,7 +192,6 @@ const Home = () => {
         </p>
       </section>
 
-      {/* How It Works Section */}
       <section className="how-it-works">
         <h4>Как это работает</h4>
         <div className="how-step">

@@ -1,4 +1,3 @@
-/* Стили для карточек */
 .card {
   width: 22%;
   text-align: center;
@@ -41,7 +40,7 @@
   max-height: 600px;
   object-fit: cover;
 }
-/* Контейнер карточек */
+
 .cards-container {
   display: flex;
   justify-content: space-around;
@@ -49,7 +48,6 @@
   background-color: #f8f9fa;
 }
 
-/* Информационная секция */
 .info-section {
   padding: 20px;
   text-align: center;
@@ -71,7 +69,6 @@
   text-decoration: none;
 }
 
-/* Секция услуг */
 .services {
   padding: 20px;
   text-align: center;
@@ -122,7 +119,6 @@
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
 
-/* Секция "Почему выбрать нас" */
 .why-choose-us {
   text-align: center;
   background-color: #f2f2f2;
@@ -172,7 +168,6 @@
   text-decoration: none;
 }
 
-/* Секция "Как это работает" */
 .how-it-works {
   padding: 20px;
   background-color: #f8f9fa;
@@ -186,7 +181,6 @@
   text-align: center;
 }
 
-/* Секция "Мы предлагаем следующие услуги" */
 .services h4 {
   font-weight: bold;
   font-size: 28px;
@@ -195,7 +189,6 @@
   text-align: center;
 }
 
-/* Карточки внутри секции "Как это работает" */
 .how-step {
   display: flex;
   flex-direction: row;
@@ -275,12 +268,10 @@
   max-width: 90%;
 }
 
-/* Hover эффект с анимацией */
 .hero-text:hover {
   animation: hoverEffect 0.6s ease forwards;
 }
 
-/* Адаптация под экран 800px */
 @media (max-width: 800px) {
   .hero-text {
     width: 250px;
@@ -291,7 +282,6 @@
   }
 }
 
-/* Адаптация под экран 700px */
 @media (max-width: 700px) {
   .hero-text {
     width: 200px;
@@ -302,7 +292,6 @@
   }
 }
 
-/* Адаптация под экран 640px */
 @media (max-width: 640px) {
   .hero-text {
     width: 150px;
@@ -313,7 +302,6 @@
   }
 }
 
-/* Адаптация под экран 600px */
 @media (max-width: 600px) {
   .hero-text {
     width: 120px;
@@ -324,7 +312,6 @@
   }
 }
 
-/* Адаптация под экран 540px */
 @media (max-width: 540px) {
   .hero-text {
     width: 90px;
@@ -335,7 +322,6 @@
   }
 }
 
-/* Адаптация под экран 500px */
 @media (max-width: 500px) {
   .hero-text {
     width: 50px;
