@@ -1,0 +1,68 @@
+.hero-section {
+  height: 850px;
+  width: 100%;
+  background-color: #333;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  color: white;
+  padding-top: 225px;
+  padding-bottom: 254px;
+  position: relative;
+  margin-bottom: 12px;
+  background-image: url("https://img.freepik.com/free-photo/silly-couple-home-moving-day-with-boxes-head_23-2148647486.jpg?t=st=1724236480~exp=1724240080~hmac=25ff834850807a1a462ed3acf2d3fd1e23bd1c0fa74c3ad220cc61b89414cf2f&w=1800");
+}
+
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.hero-content {
+  color: #fff;
+  max-width: 80%;
+  padding: 20px;
+}
+
+.hero-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin: 0;
+  margin-bottom: 20px;
+}
+
+.hero-subtitle {
+  font-size: 1.2rem;
+  margin: 0;
+  margin-bottom: 30px;
+}
+
+.hero-button {
+  display: inline-block;
+  padding: 10px 30px;
+  font-size: 1rem;
+  color: #fff;
+  background-color: #007bff;
+  border: none;
+  border-radius: 5px;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+.hero-button:hover {
+  background-color: #0056b3;
+  transform: scale(1.05);
+}
+
+.hero-button:focus {
+  outline: none;
+}
