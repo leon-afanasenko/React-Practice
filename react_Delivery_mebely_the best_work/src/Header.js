@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { FaWhatsapp, FaTelegramPlane } from "react-icons/fa";
 import "./Header.css";
 
 const Header = () => {
@@ -50,6 +51,24 @@ const Header = () => {
           <a href="#contact" onClick={(e) => handleNavigation(e, "contact")}>
             Contact Us
           </a>
+          <div className="header-icons">
+            <a
+              href="https://wa.me/your-whatsapp-number"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="WhatsApp"
+            >
+              <FaWhatsapp />
+            </a>
+            <a
+              href="https://t.me/your-telegram-username"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Telegram"
+            >
+              <FaTelegramPlane />
+            </a>
+          </div>
         </nav>
       </div>
     </header>

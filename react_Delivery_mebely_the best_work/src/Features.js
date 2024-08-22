@@ -1,7 +1,45 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./Features.css";
 
 const Features = () => {
+  useEffect(() => {
+    const elements = document.querySelectorAll(".features-image");
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("visible");
+          } else {
+            entry.target.classList.remove("visible");
+          }
+        });
+      },
+      { threshold: 0.1 }
+    );
+
+    elements.forEach((element) => observer.observe(element));
+  }, []);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrolled = window.scrollY;
+      const featuresImages = document.querySelectorAll(".features-image");
+
+      featuresImages.forEach((image) => {
+        const rect = image.getBoundingClientRect();
+        const offset = window.innerHeight - rect.top;
+        const scale = Math.max(0.95, 1 - (scrolled - rect.top) * 0.0005);
+        const translateY = Math.min(0, (scrolled - rect.top) * 0.05);
+
+        image.style.transform = `scale(${scale}) translateY(${translateY}px)`;
+      });
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   return (
     <section className="features-section">
       <div className="features-content">
@@ -17,14 +55,38 @@ const Features = () => {
             <li>Feature 3: Affordable pricing with no hidden fees.</li>
           </ul>
         </div>
-        <div className="features-image">
-          <img
-            src="https://img.freepik.com/free-photo/smiley-couple-home-moving-day-with-boxes-heads_23-2148647484.jpg?t=st=1724238256~exp=1724241856~hmac=862f487c23da3c94f29b3e7efa1bdd843a230a5fb0327cdaae66da69c63ea162&w=1800"
-            alt="Key Features"
-          />
-          <div className="features-overlay">
-            <h3>Reliable Service</h3>
-            <p>Experience the best service with our professional team.</p>
+        <div className="features-images">
+          <div className="features-image">
+            <video
+              className="features-video"
+              autoPlay
+              loop
+              muted
+              playsInline
+              poster="https://www.shutterstock.com/shutterstock/videos/1080016283/thumb/1.jpg?ip=x480"
+            >
+              <source
+                src="https://www.shutterstock.com/shutterstock/videos/1080016283/preview/stock-footage-two-young-movers-searching-for-right-tools.mp4"
+                type="video/mp4"
+              />
+              Your browser does not support the video tag.
+            </video>
+          </div>
+          <div className="features-image">
+            <video
+              className="features-video"
+              autoPlay
+              loop
+              muted
+              playsInline
+              poster="https://www.shutterstock.com/shutterstock/videos/1080016295/thumb/9.jpg?ip=x480"
+            >
+              <source
+                src="https://www.shutterstock.com/shutterstock/videos/1080016295/preview/stock-footage-two-young-movers-in-blue-uniform-working-indoors.mp4"
+                type="video/mp4"
+              />
+              Your browser does not support the video tag.
+            </video>
           </div>
         </div>
       </div>

@@ -7,6 +7,7 @@ import Testimonial from "./Testimonial";
 import Newsletter from "./Newsletter";
 import Footer from "./Footer";
 import Header from "./Header";
+import "@fortawesome/fontawesome-free/css/all.min.css";
 
 function App() {
   return (

@@ -1,69 +1,96 @@
 .footer {
-  padding: 2rem;
-  background-color: #f8f9fa;
+  background: linear-gradient(135deg, #003366, #006699);
+  color: #fff;
+  padding: 40px 0;
+  border-top: 1px solid #ddd;
+}
+
+.footer-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.footer-section {
+  flex: 1;
+  min-width: 200px;
+  padding: 0 1rem;
   text-align: center;
 }
 
-.footer-top {
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  gap: 2rem;
-  margin-bottom: 2rem;
+.footer-section h2,
+.footer-section h3 {
+  color: #fff;
+  margin-bottom: 1rem;
 }
 
-.contact-info {
-  flex: 1;
-  min-width: 250px;
-  text-align: left;
-}
-
-.footer-icons {
-  display: flex;
-  justify-content: center;
-  gap: 1rem;
-  margin-top: 1rem;
-}
-
-.footer-icon {
-  color: #333;
-  transition: color 0.3s ease;
-}
-
-.footer-icon:hover {
-  color: #007bff;
-}
-
-.footer-bottom {
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  gap: 2rem;
-  border-top: 1px solid #ddd;
-  padding-top: 2rem;
-}
-
-.services,
-.links {
-  flex: 1;
-  min-width: 250px;
-}
-
-.links ul {
-  list-style-type: none;
-  padding: 0;
-}
-
-.links ul li {
+.footer-section p,
+.footer-section ul li {
   margin: 0.5rem 0;
 }
 
-.links ul li a {
-  color: #007bff;
+.footer-section a {
+  color: #fff;
   text-decoration: none;
-  transition: color 0.3s ease;
+  transition: color 0.3s ease, transform 0.3s ease;
 }
 
-.links ul li a:hover {
-  color: #0056b3;
+.footer-section a:hover {
+  color: #ddd;
+  transform: scale(1.05);
+}
+
+.footer-divider {
+  border: 0;
+  border-left: 1px solid #ddd;
+  height: 100%;
+  margin: 0 1rem;
+}
+
+.social-icons {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  margin-top: 2rem;
+}
+
+.footer-icon {
+  color: #fff;
+  font-size: 1.5rem;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.footer-icon:hover {
+  color: #ddd;
+  transform: scale(1.2);
+}
+
+.footer-bottom {
+  text-align: center;
+  margin-top: 2rem;
+}
+
+.footer-bottom p {
+  margin: 0.5rem 0;
+  color: #fff;
+}
+
+@media (max-width: 768px) {
+  .footer-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .footer-divider {
+    display: none;
+  }
+
+  .footer-section {
+    padding: 0;
+    margin-bottom: 1rem;
+  }
 }

@@ -1,12 +1,31 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./Products.css";
 
 const Products = () => {
+  useEffect(() => {
+    const elements = document.querySelectorAll(".product-card");
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("fade-in");
+          } else {
+            entry.target.classList.remove("fade-in");
+          }
+        });
+      },
+      { threshold: [0.1] }
+    );
+
+    elements.forEach((element) => observer.observe(element));
+  }, []);
+
   return (
     <section className="products">
       <div className="container mx-auto text-center">
         <h2 className="text-3xl font-bold mb-4">Our Products</h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid">
           <div className="product-card">
             <img src="/4+Trucks.jpg" alt="Moving Trucks" />
             <h3 className="text-xl font-semibold">Moving Trucks</h3>
