@@ -1,17 +1,19 @@
+// Подключаем необходимые модули
+require("dotenv").config(); // Подключаем dotenv для использования переменных окружения
 const TelegramBot = require("node-telegram-bot-api");
 
-// Вставьте сюда ваш токен
-const token = "7046081491:AAGWeErAIX4w1D-SRcBFJEctemx90oWu1yQ";
+// Получаем токен из переменной окружения
+const token = process.env.BOT_TOKEN;
 
 // Создаем экземпляр бота
 const bot = new TelegramBot(token, { polling: true });
 
-// Функция для вывода логов в консоль
+// Функция для логирования в консоль
 const logToConsole = (message) => {
   console.log(message);
 };
 
-// Обрабатываем команду /start
+// Обработка команды /start
 bot.onText(/\/start/, (msg) => {
   const chatId = msg.chat.id;
   const userMessage = `User ${
@@ -24,7 +26,7 @@ bot.onText(/\/start/, (msg) => {
   );
 });
 
-// Обрабатываем команду /help
+// Обработка команды /help
 bot.onText(/\/help/, (msg) => {
   const chatId = msg.chat.id;
   const userMessage = `User ${
@@ -37,7 +39,7 @@ bot.onText(/\/help/, (msg) => {
   );
 });
 
-// Команда /info
+// Обработка команды /info
 bot.onText(/\/info/, (msg) => {
   const chatId = msg.chat.id;
   const userMessage = `User ${
@@ -50,7 +52,7 @@ bot.onText(/\/info/, (msg) => {
   );
 });
 
-// Команда /schedule
+// Обработка команды /schedule
 bot.onText(/\/schedule/, (msg) => {
   const chatId = msg.chat.id;
   const userMessage = `User ${
@@ -63,7 +65,7 @@ bot.onText(/\/schedule/, (msg) => {
   );
 });
 
-// Команда /services
+// Обработка команды /services
 bot.onText(/\/services/, (msg) => {
   const chatId = msg.chat.id;
   const userMessage = `User ${
@@ -76,7 +78,7 @@ bot.onText(/\/services/, (msg) => {
   );
 });
 
-// Команда /appointments
+// Обработка команды /appointments
 bot.onText(/\/appointments/, (msg) => {
   const chatId = msg.chat.id;
   const userMessage = `User ${
@@ -89,7 +91,7 @@ bot.onText(/\/appointments/, (msg) => {
   );
 });
 
-// Команда /contact
+// Обработка команды /contact
 bot.onText(/\/contact/, (msg) => {
   const chatId = msg.chat.id;
   const userMessage = `User ${
@@ -102,7 +104,7 @@ bot.onText(/\/contact/, (msg) => {
   );
 });
 
-// Команда /insurance
+// Обработка команды /insurance
 bot.onText(/\/insurance/, (msg) => {
   const chatId = msg.chat.id;
   const userMessage = `User ${
@@ -115,7 +117,7 @@ bot.onText(/\/insurance/, (msg) => {
   );
 });
 
-// Команда /feedback
+// Обработка команды /feedback
 bot.onText(/\/feedback/, (msg) => {
   const chatId = msg.chat.id;
   const userMessage = `User ${
@@ -128,7 +130,7 @@ bot.onText(/\/feedback/, (msg) => {
   );
 });
 
-// Команда /faq
+// Обработка команды /faq
 bot.onText(/\/faq/, (msg) => {
   const chatId = msg.chat.id;
   const userMessage = `User ${
@@ -141,7 +143,7 @@ bot.onText(/\/faq/, (msg) => {
   );
 });
 
-// Команда /hours
+// Обработка команды /hours
 bot.onText(/\/hours/, (msg) => {
   const chatId = msg.chat.id;
   const userMessage = `User ${
@@ -154,7 +156,7 @@ bot.onText(/\/hours/, (msg) => {
   );
 });
 
-// Обрабатываем любые другие сообщения
+// Обработка любых других сообщений
 bot.on("message", (msg) => {
   const chatId = msg.chat.id;
   const userMessage = `User ${msg.from.username || msg.from.id} sent message: ${
@@ -162,6 +164,7 @@ bot.on("message", (msg) => {
   }`;
   logToConsole(userMessage);
 
+  // Если сообщение не соответствует ни одной из команд, отправляем стандартное сообщение
   if (
     msg.text.toLowerCase() !== "/start" &&
     msg.text.toLowerCase() !== "/help" &&
