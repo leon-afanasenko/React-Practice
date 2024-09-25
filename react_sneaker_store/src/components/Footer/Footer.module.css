@@ -1,26 +1,42 @@
 .footer {
-  background-color: #333;
+  background-color: #232425;
+  padding: 40px;
   color: white;
-  padding: 20px;
   display: flex;
   justify-content: space-between;
-}
-
-.contactInfo p {
-  margin: 5px 0;
-}
-
-.social {
-  display: flex;
   align-items: center;
+  font-family: "Montserrat", sans-serif;
 }
 
-.social img {
-  width: 30px;
-  margin: 0 10px;
+.footerRight {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
 }
 
-input {
-  margin-left: 20px;
-  padding: 5px;
+.emailPlaceholder {
+  margin-top: 10px;
+  color: #ffffff;
+}
+
+.emailLink {
+  color: #ffffff;
+  text-decoration: none;
+  margin-top: 5px;
+}
+
+.socialIcons {
+  display: flex;
+  margin-bottom: 10px;
+}
+
+.socialIcons img {
+  margin-right: 10px;
+  width: 24px;
+  height: 24px;
+}
+
+.contacts {
+  color: #ffffff;
+  margin: 0;
 }
